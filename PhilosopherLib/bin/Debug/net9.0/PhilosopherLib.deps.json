@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "PhilosopherLib/1.0.0": {
+        "dependencies": {
+          "ForkLib": "1.0.0",
+          "StrategyContractLib": "1.0.0"
+        },
+        "runtime": {
+          "PhilosopherLib.dll": {}
+        }
+      },
+      "ForkLib/1.0.0": {
+        "runtime": {
+          "ForkLib.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "StrategyContractLib/1.0.0": {
+        "dependencies": {
+          "ForkLib": "1.0.0"
+        },
+        "runtime": {
+          "StrategyContractLib.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PhilosopherLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ForkLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StrategyContractLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
