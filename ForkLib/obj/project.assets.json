@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab1/ForkLib/ForkLib.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj",
       "projectName": "ForkLib",
-      "projectPath": "/home/anton/Documents/CS/lab1/ForkLib/ForkLib.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab1/ForkLib/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab2/ForkLib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"

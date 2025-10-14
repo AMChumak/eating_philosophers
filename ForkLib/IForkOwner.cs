@@ -6,6 +6,7 @@ public enum TakingStatus
     InProgress,
     Completed,
 }
+
 public interface IForkOwner
 {
     string GetName();

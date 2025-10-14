@@ -51,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab1/StrategyImplementationLib/StrategyImplementationLib.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab2/StrategyImplementationLib/StrategyImplementationLib.csproj",
       "projectName": "StrategyImplementationLib",
-      "projectPath": "/home/anton/Documents/CS/lab1/StrategyImplementationLib/StrategyImplementationLib.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab2/StrategyImplementationLib/StrategyImplementationLib.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab1/StrategyImplementationLib/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab2/StrategyImplementationLib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -71,11 +71,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab1/ForkLib/ForkLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab1/ForkLib/ForkLib.csproj"
+            "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj"
             },
-            "/home/anton/Documents/CS/lab1/StrategyContractLib/StrategyContractLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab1/StrategyContractLib/StrategyContractLib.csproj"
+            "/home/anton/Documents/CS/lab2/StrategyContractLib/StrategyContractLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab2/StrategyContractLib/StrategyContractLib.csproj"
             }
           }
         }

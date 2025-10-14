@@ -11,7 +11,8 @@ public class SimpleTakingForksStrategy : ITakingForksStrategy
         {
             leftFork.Take(forkOwner);
         }
-        else if (rightFork.Owner != forkOwner.GetName())
+
+        if (rightFork.Owner != forkOwner.GetName())
         {
             rightFork.Take(forkOwner);
         }

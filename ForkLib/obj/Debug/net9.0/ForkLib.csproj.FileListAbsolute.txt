@@ -9,3 +9,15 @@
 /home/anton/Documents/CS/lab1/ForkLib/obj/Debug/net9.0/refint/ForkLib.dll
 /home/anton/Documents/CS/lab1/ForkLib/obj/Debug/net9.0/ForkLib.pdb
 /home/anton/Documents/CS/lab1/ForkLib/obj/Debug/net9.0/ref/ForkLib.dll
+/home/anton/Documents/CS/lab2/ForkLib/bin/Debug/net9.0/ForkLib.deps.json
+/home/anton/Documents/CS/lab2/ForkLib/bin/Debug/net9.0/ForkLib.dll
+/home/anton/Documents/CS/lab2/ForkLib/bin/Debug/net9.0/ForkLib.pdb
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ForkLib.GeneratedMSBuildEditorConfig.editorconfig
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ForkLib.AssemblyInfoInputs.cache
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ForkLib.AssemblyInfo.cs
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ForkLib.csproj.CoreCompileInputs.cache
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ForkLib.sourcelink.json
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ForkLib.dll
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/refint/ForkLib.dll
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ForkLib.pdb
+/home/anton/Documents/CS/lab2/ForkLib/obj/Debug/net9.0/ref/ForkLib.dll

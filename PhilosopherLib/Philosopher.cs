@@ -1,7 +1,5 @@
 ﻿namespace PhilosopherLib;
 using System.Diagnostics.CodeAnalysis;
-using System.Net;
-using System.Security.Cryptography;
 using ForkLib;
 using StrategyContractLib;
 
@@ -49,6 +47,8 @@ public static class PhilosopherActionExtensions
     }
 }
 
+public delegate void PhilosopherChangedState(Philosopher philosopher, PhilosopherState state);
+
 public class Philosopher : IForkOwner
 {
     private int _stateDuration;
@@ -56,24 +56,29 @@ public class Philosopher : IForkOwner
     private TakingStatus _leftForkTakingStatus;
     private TakingStatus _rightForkTakingStatus;
 
+    private Thread _philosopherThread;
+
+    private volatile bool _continueRunning;
+
     public required string Name { get; init; }
     public PhilosopherState State { get; private set; }
-
-    public int InStateDuration { get; private set; }
     public PhilosopherAction Action { get; private set; }
     public required Fork LeftFork { get; init; }
     public required Fork RightFork { get; init; }
 
     public int Score { get; private set; } = 0;
 
+    public event PhilosopherChangedState? ChangedState;
 
     [SetsRequiredMembers]
     public Philosopher(string name, Fork leftFork, Fork rightFork, ITakingForksStrategy takingForksStrategy)
     {
         State = PhilosopherState.Thinking;
-        _stateDuration = Random.Shared.Next(3, 10);
+        _stateDuration = Random.Shared.Next(30, 100);
         Action = PhilosopherAction.None;
         _takingForksStrategy = takingForksStrategy;
+        _philosopherThread = new Thread(Live);
+        _continueRunning = true;
         Name = name;
         LeftFork = leftFork;
         RightFork = rightFork;
@@ -90,20 +95,18 @@ public class Philosopher : IForkOwner
         {
             _leftForkTakingStatus = status;
 
-            if (status == TakingStatus.Completed)
+            if (status == TakingStatus.InProgress)
             {
                 Action = PhilosopherAction.TakingLeftFork;
-                _leftForkTakingStatus = TakingStatus.Inaction;
             }
         }
         else if (fork.Equals(RightFork))
         {
             _rightForkTakingStatus = status;
 
-            if (status == TakingStatus.Completed)
+            if (status == TakingStatus.InProgress)
             {
                 Action = PhilosopherAction.TakingRightFork;
-                _rightForkTakingStatus = TakingStatus.Inaction;
             }
         }
     }
@@ -126,12 +129,10 @@ public class Philosopher : IForkOwner
     {
         if (fork.Equals(LeftFork))
         {
-            _leftForkTakingStatus = TakingStatus.Inaction;
             Action = PhilosopherAction.ReleaseForks;
         }
         else if (fork.Equals(RightFork))
         {
-            _rightForkTakingStatus = TakingStatus.Inaction;
             Action = PhilosopherAction.ReleaseForks;
         }
     }
@@ -156,61 +157,53 @@ public class Philosopher : IForkOwner
 
     private void ChangeStateAfterThinking()
     {
-        if (InStateDuration == _stateDuration)
-        {
-            State = PhilosopherState.Hungry;
-            Action = PhilosopherAction.None;
-            _stateDuration = 0;
-            InStateDuration = 0;
-        }
-        else
-        {
-            Action = PhilosopherAction.None;
-            InStateDuration++;
-        }
-    }
+        State = PhilosopherState.Hungry;
+        Action = PhilosopherAction.None;
+        _stateDuration = 0;
+}
 
     private void ChangeStateAfterHungry()
     {
-        if (LeftFork.Owner == Name &&
-            RightFork.Owner == Name)
-        {
-            Action = PhilosopherAction.None;
-            State = PhilosopherState.Eating;
-            _stateDuration = Random.Shared.Next(4, 5);
-            InStateDuration = 0;
-        }
-        else
-        {
-            Action = PhilosopherAction.None;
-            InStateDuration++;
-        }
+        Action = PhilosopherAction.None;
+        State = PhilosopherState.Eating;
+        _stateDuration = Random.Shared.Next(40, 50);
     }
 
     private void ChangeStateAfterEating()
     {
-        if (InStateDuration == _stateDuration)
-        {
-            LeftFork.Release(this);
-            RightFork.Release(this);
-            Action = PhilosopherAction.ReleaseForks;
-            State = PhilosopherState.Thinking;
-            _stateDuration = Random.Shared.Next(3, 10);
-            InStateDuration = 0;
-            Score++;
-        }
-        else
-        {
-            Action = PhilosopherAction.None;
-            InStateDuration++;
-        }
+        Score++;
+        LeftFork.Release(this);
+        RightFork.Release(this);
+        Action = PhilosopherAction.ReleaseForks;
+        State = PhilosopherState.Thinking;
+        _stateDuration = Random.Shared.Next(30, 100);
     }
 
-    public void Move()
+    private void Live()
     {
-        if (State == PhilosopherState.Hungry)
+        while (_continueRunning)
         {
-            _takingForksStrategy.TakeForksMove(this, LeftFork, RightFork);
+            ChangedState?.Invoke(this, State);
+            Thread.Sleep(_stateDuration);
+
+            if (State == PhilosopherState.Hungry)
+            {
+                _takingForksStrategy.TakeForksMove(this, LeftFork, RightFork);
+            }
+
+            UpdateState();
         }
+        LeftFork.Release(this);
+        RightFork.Release(this);
+    }
+
+    public void Start()
+    {
+        _philosopherThread.Start();
+    }
+
+    public void Stop()
+    {
+        _continueRunning = false;
     }
 }

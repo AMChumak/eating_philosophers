@@ -1,27 +1,34 @@
-﻿namespace ForkLib;
+﻿using static System.Threading.Thread;
 
+namespace ForkLib;
+
+public delegate void ForkChangedOwner(Fork fork, IForkOwner? owner);
 public class Fork
 {
     private IForkOwner? _owner;
 
+    private object _lock = new();
+
     public string Owner => _owner?.GetName() ?? "";
+
+    public event ForkChangedOwner? OwnerChanged;
 
     public void Take(IForkOwner candidat)
     {
-        if (_owner != null)
-            return;
+        candidat.SetTakingStatus(this, TakingStatus.InProgress);
+        Sleep(20);
 
-        switch (candidat.GetTakingStatus(this))
+        lock(_lock)
         {
-            case TakingStatus.Inaction:
-                candidat.SetTakingStatus(this, TakingStatus.InProgress);
-                break;
-            case TakingStatus.InProgress:
-                _owner = candidat;
-                candidat.SetTakingStatus(this, TakingStatus.Completed);
-                break;
-            default:
-                break;
+
+            while (_owner != null && _owner != candidat)
+            {
+                Monitor.Wait(_lock);
+            }
+
+            _owner = candidat;
+            candidat.SetTakingStatus(this, TakingStatus.Completed);
+            OwnerChanged?.Invoke(this, candidat);
         }
     }
 
@@ -30,6 +37,13 @@ public class Fork
         if (_owner != candidat)
             return;
 
-        _owner = null;
+        lock(_lock)
+        {
+            _owner = null;
+            candidat.SetTakingStatus(this, TakingStatus.Inaction);
+            OwnerChanged?.Invoke(this, null);
+
+            Monitor.PulseAll(_lock);
+        }
     }
 }

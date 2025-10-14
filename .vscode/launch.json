@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/EatingPhilosophers/bin/Debug/net9.0/EatingPhilosophers.dll",
-            "args": ["names.txt", "simple"],
+            "args": ["names.txt", "10000"],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole"
         }
