@@ -1,17 +1,195 @@
 {
   "format": 1,
   "restore": {
-    "/home/anton/Documents/CS/lab2/PhilosopherLib/PhilosopherLib.csproj": {}
+    "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj": {}
   },
   "projects": {
-    "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj": {
+    "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj",
         "projectName": "ForkLib",
-        "projectPath": "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab2/ForkLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab3/ForkLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/anton/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj",
+        "projectName": "PhilosopherLib",
+        "projectPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj",
+        "packagesPath": "/home/anton/.nuget/packages/",
+        "outputPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/anton/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+              },
+              "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              },
+              "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectName": "SimulationSettingsLib",
+        "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "packagesPath": "/home/anton/.nuget/packages/",
+        "outputPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -60,85 +238,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/anton/Documents/CS/lab2/PhilosopherLib/PhilosopherLib.csproj": {
+    "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab2/PhilosopherLib/PhilosopherLib.csproj",
-        "projectName": "PhilosopherLib",
-        "projectPath": "/home/anton/Documents/CS/lab2/PhilosopherLib/PhilosopherLib.csproj",
-        "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab2/PhilosopherLib/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/anton/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "/usr/lib/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {
-              "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj"
-              },
-              "/home/anton/Documents/CS/lab2/StrategyContractLib/StrategyContractLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab2/StrategyContractLib/StrategyContractLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/anton/Documents/CS/lab2/StrategyContractLib/StrategyContractLib.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab2/StrategyContractLib/StrategyContractLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj",
         "projectName": "StrategyContractLib",
-        "projectPath": "/home/anton/Documents/CS/lab2/StrategyContractLib/StrategyContractLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab2/StrategyContractLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -154,8 +265,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab2/ForkLib/ForkLib.csproj"
+              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
               }
             }
           }
@@ -191,7 +302,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

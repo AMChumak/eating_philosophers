@@ -11,7 +11,14 @@ public class Fork
 
     public string Owner => _owner?.GetName() ?? "";
 
+    private int _acquisitionTimeMs;
+
     public event ForkChangedOwner? OwnerChanged;
+
+    public Fork(int acquisitionTimeMs)
+    {
+        _acquisitionTimeMs = acquisitionTimeMs;
+    }
 
     public void Take(IForkOwner candidat)
     {

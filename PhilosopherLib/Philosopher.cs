@@ -2,6 +2,10 @@
 using System.Diagnostics.CodeAnalysis;
 using ForkLib;
 using StrategyContractLib;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
+using SimulationSettingsLib;
 
 public enum PhilosopherState
 {
@@ -51,15 +55,11 @@ public delegate void PhilosopherChangedState(Philosopher philosopher, Philosophe
 
 public class Philosopher : IForkOwner
 {
+    private IOptions<SimulationSettings> _settings;
     private int _stateDuration;
     private readonly ITakingForksStrategy _takingForksStrategy;
     private TakingStatus _leftForkTakingStatus;
     private TakingStatus _rightForkTakingStatus;
-
-    private Thread _philosopherThread;
-
-    private volatile bool _continueRunning;
-
     public required string Name { get; init; }
     public PhilosopherState State { get; private set; }
     public PhilosopherAction Action { get; private set; }
@@ -71,14 +71,13 @@ public class Philosopher : IForkOwner
     public event PhilosopherChangedState? ChangedState;
 
     [SetsRequiredMembers]
-    public Philosopher(string name, Fork leftFork, Fork rightFork, ITakingForksStrategy takingForksStrategy)
+    public Philosopher(string name, Fork leftFork, Fork rightFork, ITakingForksStrategy takingForksStrategy, IOptions<SimulationSettings> settings)
     {
+        _settings = settings;
         State = PhilosopherState.Thinking;
         _stateDuration = Random.Shared.Next(30, 100);
         Action = PhilosopherAction.None;
         _takingForksStrategy = takingForksStrategy;
-        _philosopherThread = new Thread(Live);
-        _continueRunning = true;
         Name = name;
         LeftFork = leftFork;
         RightFork = rightFork;
@@ -166,7 +165,7 @@ public class Philosopher : IForkOwner
     {
         Action = PhilosopherAction.None;
         State = PhilosopherState.Eating;
-        _stateDuration = Random.Shared.Next(40, 50);
+        _stateDuration = Random.Shared.Next(_settings.Value.EatingTimeMinMs, _settings.Value.EatingTimeMaxMs);
     }
 
     private void ChangeStateAfterEating()
@@ -176,34 +175,36 @@ public class Philosopher : IForkOwner
         RightFork.Release(this);
         Action = PhilosopherAction.ReleaseForks;
         State = PhilosopherState.Thinking;
-        _stateDuration = Random.Shared.Next(30, 100);
+        _stateDuration = Random.Shared.Next(_settings.Value.ThinkingTimeMinMs, _settings.Value.EatingTimeMaxMs);
     }
 
-    private void Live()
+    private async Task Move(CancellationToken token)
     {
-        while (_continueRunning)
+        ChangedState?.Invoke(this, State);
+        await Task.Delay(_stateDuration, token);
+
+        if (State == PhilosopherState.Hungry)
         {
-            ChangedState?.Invoke(this, State);
-            Thread.Sleep(_stateDuration);
-
-            if (State == PhilosopherState.Hungry)
-            {
-                _takingForksStrategy.TakeForksMove(this, LeftFork, RightFork);
-            }
-
-            UpdateState();
+            _takingForksStrategy.TakeForksMove(this, LeftFork, RightFork);
         }
-        LeftFork.Release(this);
-        RightFork.Release(this);
+
+        UpdateState();
     }
 
-    public void Start()
+    public async Task Live(CancellationToken token)
     {
-        _philosopherThread.Start();
-    }
-
-    public void Stop()
-    {
-        _continueRunning = false;
+        try
+        {
+            while (!token.IsCancellationRequested)
+            {
+                await Move(token);
+            }
+        }
+        catch (OperationCanceledException) { }
+        finally
+        {
+            LeftFork.Release(this);
+            RightFork.Release(this);
+        }
     }
 }

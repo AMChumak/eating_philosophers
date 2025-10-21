@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {}
+  },
+  "projects": {
+    "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectName": "SimulationSettingsLib",
+        "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "packagesPath": "/home/anton/.nuget/packages/",
+        "outputPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/anton/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
