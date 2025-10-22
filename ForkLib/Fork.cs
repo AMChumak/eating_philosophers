@@ -1,5 +1,5 @@
 ﻿using static System.Threading.Thread;
-
+using System.Diagnostics.CodeAnalysis;
 namespace ForkLib;
 
 public delegate void ForkChangedOwner(Fork fork, IForkOwner? owner);
@@ -13,11 +13,15 @@ public class Fork
 
     private int _acquisitionTimeMs;
 
+    public required int OrderNumber { get; init; }
+
     public event ForkChangedOwner? OwnerChanged;
 
-    public Fork(int acquisitionTimeMs)
+    [SetsRequiredMembers]
+    public Fork(int acquisitionTimeMs, int orderNumber)
     {
         _acquisitionTimeMs = acquisitionTimeMs;
+        OrderNumber = orderNumber;
     }
 
     public void Take(IForkOwner candidat)

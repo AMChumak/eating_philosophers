@@ -9,7 +9,6 @@ namespace StatisticsLib;
 
 public class Statistics : IStatistics
 {
-
     private ILogger<Statistics> _logger;
     private readonly object _lockobj = new object();
     private IOptions<SimulationSettings> _settings;
@@ -44,9 +43,17 @@ public class Statistics : IStatistics
 
     private void PrintSystemState()
     {
+        int countHalfOwners = 0;
         _logger.Log(LogLevel.Information, "---------------- TIME {0} ----------------", DateTime.Now);
         for (int i = 0; i < _philosophers.Count; ++i)
         {
+            // Check potential deadlock
+            if ((_philosophers[i].LeftFork.Owner == _philosophers[i].Name && _philosophers[i].RightFork.Owner != _philosophers[i].Name) ||
+                (_philosophers[i].LeftFork.Owner != _philosophers[i].Name && _philosophers[i].RightFork.Owner == _philosophers[i].Name))
+            {
+                countHalfOwners++;
+            }
+
             TimeSpan waiting = DateTime.Now - _lastStateStarts[i];
             TimeSpan spentTime = DateTime.Now - _start;
             _logger.Log(LogLevel.Information, "{0}: {1} (In state: {2} ms) [Current action: {3}] Throuhput: {4}", _philosophers[i].Name, _philosophers[i].State.ToString(), waiting.TotalMilliseconds, _philosophers[i].Action.ToString(), _philosophers[i].Score * 1000 / spentTime.TotalMilliseconds);
@@ -63,6 +70,9 @@ public class Statistics : IStatistics
                 _logger.Log(LogLevel.Information, "Fork {0}: Available", i);
             }
         }
+
+        if (countHalfOwners == _philosophers.Count)
+            throw new Exception("Deadlock exception");
     }
 
     public async Task Overwatch(CancellationToken token)

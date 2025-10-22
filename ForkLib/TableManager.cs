@@ -17,7 +17,7 @@ public class TableManager : ITableManager
         _forks = [];
         for (int i = 0; i < 5; ++i)
         {
-            _forks.Add(new Fork(_settings.Value.ForkAcquisitionTimeMs));
+            _forks.Add(new Fork(_settings.Value.ForkAcquisitionTimeMs, i));
         }
         _philosopherSeats = new Dictionary<string, int>();
     }

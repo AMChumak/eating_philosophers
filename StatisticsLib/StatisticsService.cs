@@ -32,6 +32,10 @@ public class StatisticsService : IHostedService
                 {
                     _logger.LogDebug("Statistics service was stopped");
                 }
+                catch (Exception)
+                {
+                    _logger.LogInformation("THERE IS DEADLOCK!\nEND SIMULATION");
+                }
                 finally
                 {
                     _applicationLifetime.StopApplication();
