@@ -75,7 +75,7 @@ public class Philosopher : IForkOwner
     {
         _settings = settings;
         State = PhilosopherState.Thinking;
-        _stateDuration = Random.Shared.Next(30, 100);
+        _stateDuration = Random.Shared.Next(_settings.Value.ThinkingTimeMinMs, _settings.Value.ThinkingTimeMaxMs);
         Action = PhilosopherAction.None;
         _takingForksStrategy = takingForksStrategy;
         Name = name;

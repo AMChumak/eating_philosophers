@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {}
+    "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj": {}
   },
   "projects": {
-    "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
+    "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj",
         "projectName": "ForkLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/ForkLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab4/ForkLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+    "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj",
         "projectName": "SimulationSettingsLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab4/SimulationSettingsLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -142,14 +142,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
+    "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj",
         "projectName": "StrategyContractLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab4/StrategyContractLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -165,8 +165,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+              "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj"
               }
             }
           }

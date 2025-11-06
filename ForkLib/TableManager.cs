@@ -51,9 +51,6 @@ public class TableManager : ITableManager
 
     public Fork GetLeftFork(int seatIndex)
     {
-        if (seatIndex == 4)
-            return _forks[0];
-
         if (seatIndex < 0 || seatIndex >= 5)
             throw new ArgumentOutOfRangeException(nameof(seatIndex), "Seat index must be between 0 and 4");
 
@@ -62,9 +59,6 @@ public class TableManager : ITableManager
 
     public Fork GetRightFork(int seatIndex)
     {
-        if (seatIndex == 4)
-            return _forks[4];
-
         if (seatIndex < 0 || seatIndex >= 5)
             throw new ArgumentOutOfRangeException(nameof(seatIndex), "Seat index must be between 0 and 4");
 

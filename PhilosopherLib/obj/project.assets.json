@@ -1554,11 +1554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab4/PhilosopherLib/PhilosopherLib.csproj",
       "projectName": "PhilosopherLib",
-      "projectPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab4/PhilosopherLib/PhilosopherLib.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab4/PhilosopherLib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -1574,14 +1574,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+            "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj"
             },
-            "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+            "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj"
+            "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj"
             }
           }
         }

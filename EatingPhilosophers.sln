@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticsLib", "Statistics
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationSettingsLib", "SimulationSettingsLib\SimulationSettingsLib.csproj", "{FF27CE64-4894-4344-899C-DD8C59B3742C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemUnitTests", "SystemUnitTests\SystemUnitTests.csproj", "{6D1A73CD-622E-4A02-BE2D-049B8F09F3E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{FF27CE64-4894-4344-899C-DD8C59B3742C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF27CE64-4894-4344-899C-DD8C59B3742C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF27CE64-4894-4344-899C-DD8C59B3742C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1A73CD-622E-4A02-BE2D-049B8F09F3E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1A73CD-622E-4A02-BE2D-049B8F09F3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1A73CD-622E-4A02-BE2D-049B8F09F3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1A73CD-622E-4A02-BE2D-049B8F09F3E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

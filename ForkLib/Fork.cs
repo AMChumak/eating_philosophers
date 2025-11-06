@@ -24,10 +24,10 @@ public class Fork
         OrderNumber = orderNumber;
     }
 
-    public void Take(IForkOwner candidat)
+    public virtual void Take(IForkOwner candidat)
     {
         candidat.SetTakingStatus(this, TakingStatus.InProgress);
-        Sleep(20);
+        Sleep(_acquisitionTimeMs);
 
         lock(_lock)
         {

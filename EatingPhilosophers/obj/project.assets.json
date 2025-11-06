@@ -1629,11 +1629,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab3/EatingPhilosophers/EatingPhilosophers.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab4/EatingPhilosophers/EatingPhilosophers.csproj",
       "projectName": "EatingPhilosophers",
-      "projectPath": "/home/anton/Documents/CS/lab3/EatingPhilosophers/EatingPhilosophers.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab4/EatingPhilosophers/EatingPhilosophers.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab3/EatingPhilosophers/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab4/EatingPhilosophers/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -1649,23 +1649,23 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+            "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/ForkLib/ForkLib.csproj"
             },
-            "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj"
+            "/home/anton/Documents/CS/lab4/PhilosopherLib/PhilosopherLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/PhilosopherLib/PhilosopherLib.csproj"
             },
-            "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+            "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/SimulationSettingsLib/SimulationSettingsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab3/StatisticsLib/StatisticsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/StatisticsLib/StatisticsLib.csproj"
+            "/home/anton/Documents/CS/lab4/StatisticsLib/StatisticsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/StatisticsLib/StatisticsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj"
+            "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/StrategyContractLib/StrategyContractLib.csproj"
             },
-            "/home/anton/Documents/CS/lab3/StrategyImplementationLib/StrategyImplementationLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab3/StrategyImplementationLib/StrategyImplementationLib.csproj"
+            "/home/anton/Documents/CS/lab4/StrategyImplementationLib/StrategyImplementationLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab4/StrategyImplementationLib/StrategyImplementationLib.csproj"
             }
           }
         }
