@@ -25,6 +25,7 @@ public class StateLoader
             forkIds = context.ForkUpdates
             .Select(f => f.ForkId)
             .Distinct()
+            .OrderBy(f => f)
             .ToList();
         }
 
