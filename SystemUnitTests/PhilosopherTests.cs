@@ -65,6 +65,7 @@ public class PhilosopherTests
         Assert.That(_statesQ[1], Is.EqualTo(PhilosopherState.Hungry));
         Assert.That(_statesQ[2], Is.EqualTo(PhilosopherState.Eating));
         Assert.That(_statesQ[3], Is.EqualTo(PhilosopherState.Thinking));
+        Console.WriteLine($"states count {_statesQ.Count}");
     }
 
     private void CheckNextState(Philosopher philosopher, PhilosopherState state)

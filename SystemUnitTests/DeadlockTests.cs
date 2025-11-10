@@ -139,9 +139,7 @@ public class DeadlockTests
 
         var hostTask = host.RunAsync(cts.Token);
 
-        Console.WriteLine("fdakl;fdad");
         hostTask.Wait();
-        Console.WriteLine("fdakl;fdadsads");
         Assert.That(logger.DeadlockDetected, Is.True);
     }
 }
@@ -228,7 +226,7 @@ public class DeadlockDetectionLoggerMock<T> : ILogger<T>
 
     public bool IsEnabled(LogLevel logLevel)
     {
-        return true; // Все уровни логирования включены для тестов
+        return true;
     }
 
     public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
@@ -236,17 +234,14 @@ public class DeadlockDetectionLoggerMock<T> : ILogger<T>
         var message = formatter(state, exception);
         _loggedMessages.Add(message);
 
-        // Проверяем наличие фразы на уровне LogInformation
         if (logLevel == LogLevel.Information && message.Contains("THERE IS DEADLOCK!\nEND SIMULATION"))
         {
             DeadlockDetected = true;
         }
     }
 
-    // Метод для получения всех записанных сообщений (опционально)
     public IReadOnlyList<string> GetLoggedMessages() => _loggedMessages.AsReadOnly();
 
-    // Вспомогательный класс для BeginScope
     private class NullScope : IDisposable
     {
         public static NullScope Instance { get; } = new NullScope();
