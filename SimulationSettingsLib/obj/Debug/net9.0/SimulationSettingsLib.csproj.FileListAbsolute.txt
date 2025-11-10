@@ -11,3 +11,16 @@
 /home/anton/Documents/CS/lab3/SimulationSettingsLib/obj/Debug/net9.0/refint/SimulationSettingsLib.dll
 /home/anton/Documents/CS/lab3/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.pdb
 /home/anton/Documents/CS/lab3/SimulationSettingsLib/obj/Debug/net9.0/ref/SimulationSettingsLib.dll
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/bin/Debug/net9.0/appsettings.json
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/bin/Debug/net9.0/SimulationSettingsLib.deps.json
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/bin/Debug/net9.0/SimulationSettingsLib.dll
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/bin/Debug/net9.0/SimulationSettingsLib.pdb
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.GeneratedMSBuildEditorConfig.editorconfig
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.AssemblyInfoInputs.cache
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.AssemblyInfo.cs
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.csproj.CoreCompileInputs.cache
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.sourcelink.json
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.dll
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/refint/SimulationSettingsLib.dll
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/SimulationSettingsLib.pdb
+/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/Debug/net9.0/ref/SimulationSettingsLib.dll

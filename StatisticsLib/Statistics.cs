@@ -1,8 +1,10 @@
 ﻿using ForkLib;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PhilosopherLib;
+using SimulationContextLib;
 using SimulationSettingsLib;
 
 namespace StatisticsLib;
@@ -25,19 +27,31 @@ public class Statistics : IStatistics
     private List<TimeSpan> _forkEatingTimes = [];
     private List<(int, int)> _ownForks = [];
 
-    public Statistics(ITableManager tableManager, ILogger<Statistics> logger, IOptions<SimulationSettings> settings)
+    private IDbContextFactory<SimulationContext> _contextFactory;
+
+    public Statistics(ITableManager tableManager, ILogger<Statistics> logger, IOptions<SimulationSettings> settings, IDbContextFactory<SimulationContext> contextFactory)
     {
         _logger = logger;
         _settings = settings;
+        _contextFactory = contextFactory;
 
         _forks = tableManager.GetForks();
         _forkFreeStarts = Enumerable.Repeat(DateTime.MinValue, _forks.Count).ToList();
         _forkFreeTimes = Enumerable.Repeat(TimeSpan.Zero, _forks.Count).ToList();
         _forkEatingTimes = Enumerable.Repeat(TimeSpan.Zero, _forks.Count).ToList();
 
-        foreach (var fork in _forks)
+        using (var context = _contextFactory.CreateDbContext())
         {
-            fork.OwnerChanged += OnForkOwnerChanged;
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
+
+            foreach (var fork in _forks)
+            {
+                fork.OwnerChanged += OnForkOwnerChanged;
+                var forkUpdate = new ForkUpdate { ForkId = fork.OrderNumber, ForkOwner = "", UpdateTime = TimeSpan.Zero };
+                context.ForkUpdates.Add(forkUpdate);
+            }
+            context.SaveChanges();
         }
     }
 
@@ -130,6 +144,14 @@ public class Statistics : IStatistics
 
         _lastStateStarts[philosopherI] = DateTime.Now;
 
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            context.Database.EnsureCreated();
+            var philosopherUpdate = new PhilosopherUpdate { Name = philosopher.Name, State = state, UpdateTime = _lastStateStarts[philosopherI] - _start };
+            context.PhilosopherUpdates.Add(philosopherUpdate);
+            context.SaveChanges();
+        }
+
         switch (state)
         {
             case PhilosopherState.Thinking:
@@ -179,21 +201,34 @@ public class Statistics : IStatistics
         {
             if (fork == _forks[i])
             {
+                DateTime updateTime = DateTime.Now;
+
+                using (var context = _contextFactory.CreateDbContext())
+                {
+                    string forkOwner = owner?.GetName() ?? "";
+                    context.Database.EnsureCreated();
+                    var forkUpdate = new ForkUpdate { ForkId = fork.OrderNumber, ForkOwner = forkOwner, UpdateTime = updateTime - _start };
+                    context.ForkUpdates.Add(forkUpdate);
+                    context.SaveChanges();
+                }
+
                 if (owner == null)
                 {
-                    _forkFreeStarts[i] = DateTime.Now;
+                    _forkFreeStarts[i] = updateTime;
                 }
                 else
                 {
                     if (_forkFreeStarts[i] == DateTime.MinValue)
                     {
-                        _forkFreeTimes[i] += DateTime.Now - _start;
+                        _forkFreeTimes[i] += updateTime - _start;
                     }
                     else
                     {
-                        _forkFreeTimes[i] += DateTime.Now - _forkFreeStarts[i];
+                        _forkFreeTimes[i] += updateTime - _forkFreeStarts[i];
                     }
                 }
+
+                break;
             }
         }
     }
@@ -210,6 +245,14 @@ public class Statistics : IStatistics
             _lastEatingStarts.Add(DateTime.MinValue);
             _ownForks.Add((-1, -1));
             philosopher.ChangedState += OnPhilosopherChangedStatus;
+
+            using (var context = _contextFactory.CreateDbContext())
+            {
+                context.Database.EnsureCreated();
+                var philosopherUpdate = new PhilosopherUpdate { Name = philosopher.Name, State = philosopher.State, UpdateTime = TimeSpan.Zero };
+                context.PhilosopherUpdates.Add(philosopherUpdate);
+                context.SaveChanges();
+            }
         }
     }
 }

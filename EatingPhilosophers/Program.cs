@@ -1,10 +1,12 @@
 ﻿using System.Reflection;
 using ForkLib;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PhilosopherLib;
+using SimulationContextLib;
 using SimulationSettingsLib;
 using StatisticsLib;
 using StrategyContractLib;
@@ -26,6 +28,10 @@ internal sealed class Program
             .ConfigureServices((hostContext, services) =>
             {
                 services.AddOptions<SimulationSettings>().Bind(hostContext.Configuration.GetSection("Simulation"));
+
+                services.AddDbContextFactory<SimulationContext>(
+                    options => options.UseNpgsql("name=ConnectionStrings:SimulationDatabase")
+                    );
 
                 services.AddSingleton<ITakingForksStrategy,SimpleTakingForksStrategy>();
                 services.AddSingleton<ITableManager, TableManager>();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/anton/Documents/CS/lab3/EatingPhilosophers/EatingPhilosophers.csproj": {}
+    "/home/anton/Documents/CS/lab5/EatingPhilosophers/EatingPhilosophers.csproj": {}
   },
   "projects": {
-    "/home/anton/Documents/CS/lab3/EatingPhilosophers/EatingPhilosophers.csproj": {
+    "/home/anton/Documents/CS/lab5/EatingPhilosophers/EatingPhilosophers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/EatingPhilosophers/EatingPhilosophers.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/EatingPhilosophers/EatingPhilosophers.csproj",
         "projectName": "EatingPhilosophers",
-        "projectPath": "/home/anton/Documents/CS/lab3/EatingPhilosophers/EatingPhilosophers.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab5/EatingPhilosophers/EatingPhilosophers.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/EatingPhilosophers/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab5/EatingPhilosophers/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -27,23 +27,26 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+              "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj"
+              "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/StatisticsLib/StatisticsLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/StatisticsLib/StatisticsLib.csproj"
+              "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj"
+              "/home/anton/Documents/CS/lab5/StatisticsLib/StatisticsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/StatisticsLib/StatisticsLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/StrategyImplementationLib/StrategyImplementationLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/StrategyImplementationLib/StrategyImplementationLib.csproj"
+              "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj"
+              },
+              "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj"
               }
             }
           }
@@ -64,6 +67,18 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.10, )"
@@ -113,14 +128,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
+    "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj",
         "projectName": "ForkLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/ForkLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab5/ForkLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -136,8 +151,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj"
               }
             }
           }
@@ -191,14 +206,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj": {
+    "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj",
         "projectName": "PhilosopherLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab5/PhilosopherLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -214,14 +229,14 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+              "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj"
+              "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj"
               }
             }
           }
@@ -291,14 +306,107 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+    "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
-        "projectName": "SimulationSettingsLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj",
+        "projectName": "SimulationContextLib",
+        "projectPath": "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab5/SimulationContextLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/anton/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
+              },
+              "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectName": "SimulationSettingsLib",
+        "projectPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "packagesPath": "/home/anton/.nuget/packages/",
+        "outputPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -351,14 +459,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/StatisticsLib/StatisticsLib.csproj": {
+    "/home/anton/Documents/CS/lab5/StatisticsLib/StatisticsLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/StatisticsLib/StatisticsLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/StatisticsLib/StatisticsLib.csproj",
         "projectName": "StatisticsLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/StatisticsLib/StatisticsLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab5/StatisticsLib/StatisticsLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/StatisticsLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab5/StatisticsLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -374,14 +482,17 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+              "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/PhilosopherLib/PhilosopherLib.csproj"
+              "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj"
+              },
+              "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj"
               }
             }
           }
@@ -402,6 +513,18 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.10, )"
@@ -447,14 +570,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
+    "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj",
         "projectName": "StrategyContractLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab5/StrategyContractLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -470,8 +593,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+              "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
               }
             }
           }
@@ -511,14 +634,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab3/StrategyImplementationLib/StrategyImplementationLib.csproj": {
+    "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab3/StrategyImplementationLib/StrategyImplementationLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj",
         "projectName": "StrategyImplementationLib",
-        "projectPath": "/home/anton/Documents/CS/lab3/StrategyImplementationLib/StrategyImplementationLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab3/StrategyImplementationLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab5/StrategyImplementationLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -534,11 +657,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/ForkLib/ForkLib.csproj"
+              "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
               },
-              "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab3/StrategyContractLib/StrategyContractLib.csproj"
+              "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj"
               }
             }
           }
