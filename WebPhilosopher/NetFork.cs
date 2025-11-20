@@ -1,0 +1,75 @@
+namespace WebPhilosopher;
+using System.Diagnostics.CodeAnalysis;
+using ForkLib;
+using System.Net.Http;
+using System.Net.Http.Json;
+using NetworkContracts;
+
+public class NetFork: IFork
+{
+    private HttpClient _httpClient;
+    private string _tableServiceUrl;
+    private IForkOwner? _owner;
+
+    public string Owner => _owner?.GetName() ?? "";
+
+    public required int OrderNumber { get; init; }
+
+    public event ForkChangedOwner? OwnerChanged;
+
+    [SetsRequiredMembers]
+    public NetFork(int orderNumber, HttpClient httpClient, string tableServiceUrl)
+    {
+        OrderNumber = orderNumber;
+        _httpClient = httpClient;
+        _tableServiceUrl = tableServiceUrl;
+    }
+
+    public bool Take(IForkOwner candidat)
+    {
+        candidat.SetTakingStatus(this, TakingStatus.InProgress);
+
+        var took = false;
+        while (!took)
+        {
+            var request = new TakeForkRequest
+            {
+                PhilosopherName = candidat.GetName(),
+                ForkId = OrderNumber,
+            };
+
+            var response = _httpClient.PostAsJsonAsync($"{_tableServiceUrl}/forks/take", request).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadFromJsonAsync<TakeForkResponse>();
+
+                result.Wait();
+
+                took = result?.Result?.IsSuccess ?? false;
+            }
+        }
+
+        return true;
+    }
+
+    public void Release(IForkOwner candidat)
+    {
+        candidat.SetTakingStatus(this, TakingStatus.Inaction);
+
+        var done = false;
+        while (!done)
+        {
+            var request = new ReleaseForksRequest
+            {
+                PhilosopherName = candidat.GetName(),
+                ForkId = OrderNumber,
+            };
+
+            var response = _httpClient.PostAsJsonAsync($"{_tableServiceUrl}/forks/release", request).Result;
+
+            done = response.IsSuccessStatusCode;
+        }
+    }
+}
+
