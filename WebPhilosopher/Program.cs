@@ -78,7 +78,7 @@ await Host.CreateDefaultBuilder(args)
     {
         services.AddOptions<SimulationSettings>().Bind(hostContext.Configuration.GetSection("Simulation"));
 
-        services.AddSingleton<ITakingForksStrategy,SimpleTakingForksStrategy>();
+        services.AddSingleton<ITakingForksStrategy,SourceHierarchyTakingForksStrategy>();
         services.AddSingleton<ITableManager, TableManager>();
 
         services.AddHostedService(provider =>

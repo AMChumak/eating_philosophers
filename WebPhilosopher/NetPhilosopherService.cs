@@ -78,7 +78,7 @@ public class NetPhilosopherService : IHostedService
 
         var done = false;
         int countTries = 0;
-        while (!done && countTries++ < 5)
+        while (!done)
         {
             var response = await _httpClient.PostAsJsonAsync($"{_tableServiceUrl}/philosopher/exit", request);
             done = response.IsSuccessStatusCode;

@@ -47,6 +47,12 @@ public class NetFork: IFork
                 result.Wait();
 
                 took = result?.Result?.IsSuccess ?? false;
+
+                if (!took)
+                {
+                    var r = new Random();
+                    Task.Delay(r.Next(200,400));
+                }
             }
         }
 
