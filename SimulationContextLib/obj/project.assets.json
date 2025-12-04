@@ -3986,11 +3986,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab6/SimulationContextLib/SimulationContextLib.csproj",
       "projectName": "SimulationContextLib",
-      "projectPath": "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab6/SimulationContextLib/SimulationContextLib.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab5/SimulationContextLib/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab6/SimulationContextLib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -4006,11 +4006,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
+            "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj"
+            "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj"
             }
           }
         }

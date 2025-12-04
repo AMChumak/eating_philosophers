@@ -11,9 +11,9 @@ public interface IForkOwner
 {
     string GetName();
 
-    void SetTakingStatus(Fork fork, TakingStatus status);
+    void SetTakingStatus(IFork fork, TakingStatus status);
 
-    TakingStatus GetTakingStatus(Fork fork);
+    TakingStatus GetTakingStatus(IFork fork);
 
-    void ReleaseFork(Fork fork);
+    void ReleaseFork(IFork fork);
 }

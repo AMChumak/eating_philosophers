@@ -15,8 +15,8 @@ public class Statistics : IStatistics
     private readonly object _lockobj = new object();
     private IOptions<SimulationSettings> _settings;
     private DateTime _start;
-    private List<Philosopher> _philosophers = [];
-    private List<Fork> _forks = [];
+    private List<IPhilosopher> _philosophers = [];
+    private IFork[] _forks = new IFork[5];
     private List<DateTime> _lastStateStarts = [];
     private List<DateTime> _lastWaitingStarts = [];
     private List<TimeSpan> _waitingSums = [];
@@ -29,30 +29,15 @@ public class Statistics : IStatistics
 
     private IDbContextFactory<SimulationContext> _contextFactory;
 
-    public Statistics(ITableManager tableManager, ILogger<Statistics> logger, IOptions<SimulationSettings> settings, IDbContextFactory<SimulationContext> contextFactory)
+    public Statistics(ITableManager tableManager, ILogger<Statistics> logger, IOptions<SimulationSettings> settings)
     {
         _logger = logger;
         _settings = settings;
-        _contextFactory = contextFactory;
 
-        _forks = tableManager.GetForks();
-        _forkFreeStarts = Enumerable.Repeat(DateTime.MinValue, _forks.Count).ToList();
-        _forkFreeTimes = Enumerable.Repeat(TimeSpan.Zero, _forks.Count).ToList();
-        _forkEatingTimes = Enumerable.Repeat(TimeSpan.Zero, _forks.Count).ToList();
-
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-
-            foreach (var fork in _forks)
-            {
-                fork.OwnerChanged += OnForkOwnerChanged;
-                var forkUpdate = new ForkUpdate { ForkId = fork.OrderNumber, ForkOwner = "", UpdateTime = TimeSpan.Zero };
-                context.ForkUpdates.Add(forkUpdate);
-            }
-            context.SaveChanges();
-        }
+        tableManager.GetForks().CopyTo(_forks);
+        _forkFreeStarts = Enumerable.Repeat(DateTime.MinValue, _forks.Length).ToList();
+        _forkFreeTimes = Enumerable.Repeat(TimeSpan.Zero, _forks.Length).ToList();
+        _forkEatingTimes = Enumerable.Repeat(TimeSpan.Zero, _forks.Length).ToList();
     }
 
     private void PrintSystemState()
@@ -73,7 +58,7 @@ public class Statistics : IStatistics
             _logger.Log(LogLevel.Information, "{0}: {1} (In state: {2} ms) [Current action: {3}] Throuhput: {4}", _philosophers[i].Name, _philosophers[i].State.ToString(), waiting.TotalMilliseconds, _philosophers[i].Action.ToString(), _philosophers[i].Score * 1000 / spentTime.TotalMilliseconds);
         }
 
-        for (int i = 0; i < _forks.Count; ++i)
+        for (int i = 0; i < _forks.Length; ++i)
         {
             if (_forks[i].Owner != "")
             {
@@ -113,7 +98,7 @@ public class Statistics : IStatistics
 
         _logger.Log(LogLevel.Information, "\n\nForks:\n");
 
-        for (int i = 0; i < _forks.Count; ++i)
+        for (int i = 0; i < _forks.Length; ++i)
         {
             double availablePercents = (double)_forkFreeTimes[i].TotalMilliseconds * 100 / totalTime.TotalMilliseconds;
             double inEatingPercents = (double)_forkEatingTimes[i].TotalMilliseconds * 100 / totalTime.TotalMilliseconds;
@@ -127,7 +112,7 @@ public class Statistics : IStatistics
         }
     }
 
-    public void OnPhilosopherChangedStatus(Philosopher philosopher, PhilosopherState state)
+    public void OnPhilosopherChangedStatus(IPhilosopher philosopher, PhilosopherState state)
     {
         int philosopherI = -1;
         for (int i = 0; i < _philosophers.Count; ++i)
@@ -143,14 +128,6 @@ public class Statistics : IStatistics
             return;
 
         _lastStateStarts[philosopherI] = DateTime.Now;
-
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            context.Database.EnsureCreated();
-            var philosopherUpdate = new PhilosopherUpdate { Name = philosopher.Name, State = state, UpdateTime = _lastStateStarts[philosopherI] - _start };
-            context.PhilosopherUpdates.Add(philosopherUpdate);
-            context.SaveChanges();
-        }
 
         switch (state)
         {
@@ -178,7 +155,7 @@ public class Statistics : IStatistics
 
                     List<int> ph_forks = [];
 
-                    for (int j = 0; j < _forks.Count; ++j)
+                    for (int j = 0; j < _forks.Length; ++j)
                     {
                         if (_forks[j].Owner == philosopher.Name)
                         {
@@ -195,9 +172,9 @@ public class Statistics : IStatistics
         }
     }
 
-    public void OnForkOwnerChanged(Fork fork, IForkOwner? owner)
+    public void OnForkOwnerChanged(IFork fork, IForkOwner? owner)
     {
-        for (int i = 0; i < _forks.Count; ++i)
+        for (int i = 0; i < _forks.Length; ++i)
         {
             if (fork == _forks[i])
             {
@@ -233,7 +210,7 @@ public class Statistics : IStatistics
         }
     }
 
-    public void AddPhilosopher(Philosopher philosopher)
+    public void AddPhilosopher(IPhilosopher philosopher)
     {
         lock(_lockobj)
         {
@@ -245,14 +222,6 @@ public class Statistics : IStatistics
             _lastEatingStarts.Add(DateTime.MinValue);
             _ownForks.Add((-1, -1));
             philosopher.ChangedState += OnPhilosopherChangedStatus;
-
-            using (var context = _contextFactory.CreateDbContext())
-            {
-                context.Database.EnsureCreated();
-                var philosopherUpdate = new PhilosopherUpdate { Name = philosopher.Name, State = philosopher.State, UpdateTime = TimeSpan.Zero };
-                context.PhilosopherUpdates.Add(philosopherUpdate);
-                context.SaveChanges();
-            }
         }
     }
 }

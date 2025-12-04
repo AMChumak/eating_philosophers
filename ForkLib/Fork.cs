@@ -2,8 +2,8 @@
 using System.Diagnostics.CodeAnalysis;
 namespace ForkLib;
 
-public delegate void ForkChangedOwner(Fork fork, IForkOwner? owner);
-public class Fork
+
+public class Fork: IFork
 {
     private IForkOwner? _owner;
 
@@ -24,10 +24,10 @@ public class Fork
         OrderNumber = orderNumber;
     }
 
-    public void Take(IForkOwner candidat)
+    public bool Take(IForkOwner candidat)
     {
         candidat.SetTakingStatus(this, TakingStatus.InProgress);
-        Sleep(20);
+        Sleep(_acquisitionTimeMs);
 
         lock(_lock)
         {
@@ -41,6 +41,7 @@ public class Fork
             candidat.SetTakingStatus(this, TakingStatus.Completed);
             OwnerChanged?.Invoke(this, candidat);
         }
+        return true;
     }
 
     public void Release(IForkOwner candidat)

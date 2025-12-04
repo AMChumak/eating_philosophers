@@ -1,0 +1,6 @@
+@WebTable_HostAddress = http://localhost:5289
+
+GET {{WebTable_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

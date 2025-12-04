@@ -2,8 +2,8 @@ namespace ForkLib;
 
 public interface ITableManager
 {
-    List<Fork> GetForks();
+    List<IFork> GetForks();
     int TakeSeat(string philosopherName);
-    Fork GetLeftFork(int seatIndex);
-    Fork GetRightFork(int seatIndex);
+    IFork GetLeftFork(int seatIndex);
+    IFork GetRightFork(int seatIndex);
 }

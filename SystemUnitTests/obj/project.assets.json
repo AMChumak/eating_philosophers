@@ -5315,11 +5315,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab5/SystemUnitTests/SystemUnitTests.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab6/SystemUnitTests/SystemUnitTests.csproj",
       "projectName": "SystemUnitTests",
-      "projectPath": "/home/anton/Documents/CS/lab5/SystemUnitTests/SystemUnitTests.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab6/SystemUnitTests/SystemUnitTests.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab5/SystemUnitTests/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab6/SystemUnitTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -5335,32 +5335,32 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab5/EatingPhilosophers/EatingPhilosophers.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/EatingPhilosophers/EatingPhilosophers.csproj"
+            "/home/anton/Documents/CS/lab6/EatingPhilosophers/EatingPhilosophers.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/EatingPhilosophers/EatingPhilosophers.csproj"
             },
-            "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/ForkLib/ForkLib.csproj"
+            "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/PhilosopherLib/PhilosopherLib.csproj"
+            "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/SimulationContextLib/SimulationContextLib.csproj"
+            "/home/anton/Documents/CS/lab6/SimulationContextLib/SimulationContextLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/SimulationContextLib/SimulationContextLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj"
+            "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/StatisticsLib/StatisticsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/StatisticsLib/StatisticsLib.csproj"
+            "/home/anton/Documents/CS/lab6/StatisticsLib/StatisticsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/StatisticsLib/StatisticsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/StrategyContractLib/StrategyContractLib.csproj"
+            "/home/anton/Documents/CS/lab6/StrategyContractLib/StrategyContractLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/StrategyContractLib/StrategyContractLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj"
+            "/home/anton/Documents/CS/lab6/StrategyImplementationLib/StrategyImplementationLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/StrategyImplementationLib/StrategyImplementationLib.csproj"
             },
-            "/home/anton/Documents/CS/lab5/View/View.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab5/View/View.csproj"
+            "/home/anton/Documents/CS/lab6/View/View.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab6/View/View.csproj"
             }
           }
         }

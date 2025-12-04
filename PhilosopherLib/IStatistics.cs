@@ -7,7 +7,7 @@ public interface IStatistics
     Task Overwatch(CancellationToken token);
     void PrintStatistics();
 
-    void AddPhilosopher(Philosopher philosopher);
-    void OnPhilosopherChangedStatus(Philosopher philosopher, PhilosopherState state);
-    void OnForkOwnerChanged(Fork fork, IForkOwner? owner);
+    void AddPhilosopher(IPhilosopher philosopher);
+    void OnPhilosopherChangedStatus(IPhilosopher philosopher, PhilosopherState state);
+    void OnForkOwnerChanged(IFork fork, IForkOwner? owner);
 }

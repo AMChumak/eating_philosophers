@@ -5,7 +5,7 @@ using StrategyContractLib;
 
 public class SimpleTakingForksStrategy : ITakingForksStrategy
 {
-    public void TakeForksMove(IForkOwner forkOwner, Fork leftFork, Fork rightFork)
+    public void TakeForksMove(IForkOwner forkOwner, IFork leftFork, IFork rightFork)
     {
         if (leftFork.Owner != forkOwner.GetName())
         {

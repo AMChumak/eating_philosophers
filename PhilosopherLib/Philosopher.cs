@@ -51,9 +51,7 @@ public static class PhilosopherActionExtensions
     }
 }
 
-public delegate void PhilosopherChangedState(Philosopher philosopher, PhilosopherState state);
-
-public class Philosopher : IForkOwner
+public class Philosopher : IPhilosopher
 {
     private IOptions<SimulationSettings> _settings;
     private int _stateDuration;
@@ -63,15 +61,15 @@ public class Philosopher : IForkOwner
     public required string Name { get; init; }
     public PhilosopherState State { get; private set; }
     public PhilosopherAction Action { get; private set; }
-    public required Fork LeftFork { get; init; }
-    public required Fork RightFork { get; init; }
+    public required IFork LeftFork { get; init; }
+    public required IFork RightFork { get; init; }
 
     public int Score { get; private set; } = 0;
 
     public event PhilosopherChangedState? ChangedState;
 
     [SetsRequiredMembers]
-    public Philosopher(string name, Fork leftFork, Fork rightFork, ITakingForksStrategy takingForksStrategy, IOptions<SimulationSettings> settings)
+    public Philosopher(string name, IFork leftFork, IFork rightFork, ITakingForksStrategy takingForksStrategy, IOptions<SimulationSettings> settings)
     {
         _settings = settings;
         State = PhilosopherState.Thinking;
@@ -88,7 +86,7 @@ public class Philosopher : IForkOwner
         return Name;
     }
 
-    public void SetTakingStatus(Fork fork, TakingStatus status)
+    public void SetTakingStatus(IFork fork, TakingStatus status)
     {
         if (fork.Equals(LeftFork))
         {
@@ -110,7 +108,7 @@ public class Philosopher : IForkOwner
         }
     }
 
-    public TakingStatus GetTakingStatus(Fork fork)
+    public TakingStatus GetTakingStatus(IFork fork)
     {
         if (fork.Equals(LeftFork))
         {
@@ -124,7 +122,7 @@ public class Philosopher : IForkOwner
         return TakingStatus.Inaction;
     }
 
-    public void ReleaseFork(Fork fork)
+    public void ReleaseFork(IFork fork)
     {
         if (fork.Equals(LeftFork))
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0R5bcp5yeV0=",
+  "dgSpecHash": "0uvpcJrCOwo=",
   "success": true,
-  "projectFilePath": "/home/anton/Documents/CS/lab5/SystemUnitTests/SystemUnitTests.csproj",
+  "projectFilePath": "/home/anton/Documents/CS/lab6/SystemUnitTests/SystemUnitTests.csproj",
   "expectedPackageFiles": [
     "/home/anton/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/anton/.nuget/packages/coverlet.collector/6.0.2/coverlet.collector.6.0.2.nupkg.sha512",

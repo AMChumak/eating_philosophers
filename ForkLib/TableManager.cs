@@ -6,7 +6,7 @@ namespace ForkLib;
 public class TableManager : ITableManager
 {
     private readonly IOptions<SimulationSettings> _settings;
-    private readonly List<Fork> _forks;
+    private readonly List<IFork> _forks;
     private readonly Dictionary<string, int> _philosopherSeats;
     private readonly object _seatLock = new object();
     private int _nextSeatIndex = 0;
@@ -22,7 +22,7 @@ public class TableManager : ITableManager
         _philosopherSeats = new Dictionary<string, int>();
     }
 
-    public List<Fork> GetForks()
+    public List<IFork> GetForks()
     {
         return _forks;
     }
@@ -49,7 +49,7 @@ public class TableManager : ITableManager
         }
     }
 
-    public Fork GetLeftFork(int seatIndex)
+    public IFork GetLeftFork(int seatIndex)
     {
         if (seatIndex == 4)
             return _forks[0];
@@ -60,7 +60,7 @@ public class TableManager : ITableManager
         return _forks[seatIndex];
     }
 
-    public Fork GetRightFork(int seatIndex)
+    public IFork GetRightFork(int seatIndex)
     {
         if (seatIndex == 4)
             return _forks[4];

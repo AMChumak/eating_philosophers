@@ -1,0 +1,81 @@
+services:
+  table-service:
+    build:
+      context: .
+      dockerfile: WebTable/Dockerfile
+    container_name: table-service
+    ports:
+      - "${TABLE_SERVICE_PORT:-5050}:${TABLE_SERVICE_PORT:-5050}"
+    environment:
+      - PORT=${TABLE_SERVICE_PORT:-5050}
+    networks:
+      - philosophers-net
+
+  philosopher-1:
+    build:
+      context: .
+      dockerfile: WebPhilosopher/Dockerfile
+    container_name: philosopher-1
+    environment:
+      - PHILOSOPHER_NAME=Платон
+      - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+    depends_on:
+      - table-service
+    networks:
+      - philosophers-net
+
+  philosopher-2:
+    build:
+      context: .
+      dockerfile: WebPhilosopher/Dockerfile
+    container_name: philosopher-2
+    environment:
+      - PHILOSOPHER_NAME=Аристотель
+      - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+    depends_on:
+      - table-service
+    networks:
+      - philosophers-net
+
+  philosopher-3:
+    build:
+      context: .
+      dockerfile: WebPhilosopher/Dockerfile
+    container_name: philosopher-3
+    environment:
+      - PHILOSOPHER_NAME=Сократ
+      - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+    depends_on:
+      - table-service
+    networks:
+      - philosophers-net
+
+  philosopher-4:
+    build:
+      context: .
+      dockerfile: WebPhilosopher/Dockerfile
+    container_name: philosopher-4
+    environment:
+      - PHILOSOPHER_NAME=Декарт
+      - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+    depends_on:
+      - table-service
+    networks:
+      - philosophers-net
+
+  philosopher-5:
+    build:
+      context: .
+      dockerfile: WebPhilosopher/Dockerfile
+    container_name: philosopher-5
+    environment:
+      - PHILOSOPHER_NAME=Кант
+      - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+    depends_on:
+      - table-service
+    networks:
+      - philosophers-net
+
+networks:
+  philosophers-net:
+    driver: bridge

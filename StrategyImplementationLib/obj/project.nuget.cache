@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n3blnETrikY=",
+  "dgSpecHash": "+kH4ChU4cWs=",
   "success": true,
-  "projectFilePath": "/home/anton/Documents/CS/lab5/StrategyImplementationLib/StrategyImplementationLib.csproj",
+  "projectFilePath": "/home/anton/Documents/CS/lab6/StrategyImplementationLib/StrategyImplementationLib.csproj",
   "expectedPackageFiles": [
     "/home/anton/.nuget/packages/microsoft.extensions.configuration/9.0.10/microsoft.extensions.configuration.9.0.10.nupkg.sha512",
     "/home/anton/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.10/microsoft.extensions.configuration.abstractions.9.0.10.nupkg.sha512",

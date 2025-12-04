@@ -148,8 +148,8 @@ public class DeadlockTests
 public class StatisticsMockBuilder
 {
     private bool _deadlockOccurred = false;
-    private readonly List<Philosopher> _philosophers = new();
-    private List<Fork> _forks = [];
+    private readonly List<IPhilosopher> _philosophers = new();
+    private List<IFork> _forks = [];
 
     public IStatistics Build()
     {
@@ -182,7 +182,7 @@ public class StatisticsMockBuilder
         return mock.Object;
     }
 
-    public StatisticsMockBuilder WithDeadlockFlag(ref bool deadlockFlag, List<Fork> forks)
+    public StatisticsMockBuilder WithDeadlockFlag(ref bool deadlockFlag, List<IFork> forks)
     {
         _deadlockOccurred = deadlockFlag;
         _forks = forks;

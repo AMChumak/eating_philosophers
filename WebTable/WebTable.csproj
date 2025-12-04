@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../ForkLib/ForkLib.csproj" />
+    <ProjectReference Include="../NetworkContracts/NetworkContracts.csproj" />
+    <ProjectReference Include="../PhilosopherLib/PhilosopherLib.csproj" />
+    <ProjectReference Include="../SimulationSettingsLib/SimulationSettingsLib.csproj" />
+    <ProjectReference Include="../StatisticsLib/StatisticsLib.csproj" />
+  </ItemGroup>
+
+</Project>

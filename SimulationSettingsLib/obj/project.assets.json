@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj",
       "projectName": "SimulationSettingsLib",
-      "projectPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/SimulationSettingsLib.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab5/SimulationSettingsLib/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"

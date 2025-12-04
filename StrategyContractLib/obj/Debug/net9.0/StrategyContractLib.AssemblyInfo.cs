@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StrategyContractLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9988e253fca9caf7e65ea99445acaa08726f4aaa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ec59c0ea2d96f120d0f645fa27da122d32b99c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("StrategyContractLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StrategyContractLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

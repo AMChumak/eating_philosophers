@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebPhilosopher")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5de9e7a0fb6ad9f09ca8f4a7ce571d9aa14b3961")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ec59c0ea2d96f120d0f645fa27da122d32b99c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebPhilosopher")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebPhilosopher")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

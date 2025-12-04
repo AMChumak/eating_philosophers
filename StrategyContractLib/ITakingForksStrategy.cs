@@ -4,5 +4,5 @@ using ForkLib;
 
 public interface ITakingForksStrategy
 {
-    void TakeForksMove(IForkOwner forkOwner, Fork leftFork, Fork rightFork);
+    void TakeForksMove(IForkOwner forkOwner, IFork leftFork, IFork rightFork);
 }
