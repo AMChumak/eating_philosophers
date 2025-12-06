@@ -11,6 +11,8 @@ public class NetFork: IFork
     private string _tableServiceUrl;
     private IForkOwner? _owner;
 
+    private EventService _eventService;
+
     public string Owner => _owner?.GetName() ?? "";
 
     public required int OrderNumber { get; init; }
@@ -18,11 +20,12 @@ public class NetFork: IFork
     public event ForkChangedOwner? OwnerChanged;
 
     [SetsRequiredMembers]
-    public NetFork(int orderNumber, HttpClient httpClient, string tableServiceUrl)
+    public NetFork(int orderNumber, HttpClient httpClient, string tableServiceUrl, EventService eventService)
     {
         OrderNumber = orderNumber;
         _httpClient = httpClient;
         _tableServiceUrl = tableServiceUrl;
+        _eventService = eventService;
     }
 
     public bool Take(IForkOwner candidat)
@@ -75,6 +78,11 @@ public class NetFork: IFork
             var response = _httpClient.PostAsJsonAsync($"{_tableServiceUrl}/forks/release", request).Result;
 
             done = response.IsSuccessStatusCode;
+            if (!done)
+            {
+                var r = new Random();
+                Task.Delay(r.Next(200,400));
+            }
         }
     }
 }

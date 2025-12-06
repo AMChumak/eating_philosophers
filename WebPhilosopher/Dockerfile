@@ -1,10 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Копируем ВЕСЬ исходный код решения
 COPY . ./
 
-# Переходим в папку проекта и работаем оттуда
 WORKDIR /src/WebPhilosopher
 
 RUN dotnet restore

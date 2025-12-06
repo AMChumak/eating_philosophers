@@ -15,6 +15,7 @@
     <ProjectReference Include="../StatisticsLib/StatisticsLib.csproj" />
     <ProjectReference Include="../StrategyContractLib/StrategyContractLib.csproj" />
     <ProjectReference Include="../StrategyImplementationLib/StrategyImplementationLib.csproj" />
+    <ProjectReference Include="../WebPhilosopher/WebPhilosopher.csproj" />
   </ItemGroup>
 
   <ItemGroup>

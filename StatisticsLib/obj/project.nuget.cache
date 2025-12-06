@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vVkpsqZASA8=",
+  "dgSpecHash": "5HdO/odmlrY=",
   "success": true,
-  "projectFilePath": "/home/anton/Documents/CS/lab6/StatisticsLib/StatisticsLib.csproj",
+  "projectFilePath": "/home/anton/Documents/CS/lab7/StatisticsLib/StatisticsLib.csproj",
   "expectedPackageFiles": [
     "/home/anton/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/anton/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

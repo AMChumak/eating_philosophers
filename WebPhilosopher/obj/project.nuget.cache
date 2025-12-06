@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L3i2LtNhXT4=",
+  "dgSpecHash": "V/rYPgrzjms=",
   "success": true,
-  "projectFilePath": "/home/anton/Documents/CS/lab6/WebPhilosopher/WebPhilosopher.csproj",
+  "projectFilePath": "/home/anton/Documents/CS/lab7/WebPhilosopher/WebPhilosopher.csproj",
   "expectedPackageFiles": [
     "/home/anton/.nuget/packages/microsoft.extensions.configuration/10.0.0/microsoft.extensions.configuration.10.0.0.nupkg.sha512",
     "/home/anton/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
@@ -31,11 +31,13 @@
     "/home/anton/.nuget/packages/microsoft.extensions.options/10.0.0/microsoft.extensions.options.10.0.0.nupkg.sha512",
     "/home/anton/.nuget/packages/microsoft.extensions.options.configurationextensions/10.0.0/microsoft.extensions.options.configurationextensions.10.0.0.nupkg.sha512",
     "/home/anton/.nuget/packages/microsoft.extensions.primitives/10.0.0/microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "/home/anton/.nuget/packages/rabbitmq.client/7.2.0/rabbitmq.client.7.2.0.nupkg.sha512",
     "/home/anton/.nuget/packages/system.diagnostics.diagnosticsource/10.0.0/system.diagnostics.diagnosticsource.10.0.0.nupkg.sha512",
     "/home/anton/.nuget/packages/system.diagnostics.eventlog/9.0.10/system.diagnostics.eventlog.9.0.10.nupkg.sha512",
     "/home/anton/.nuget/packages/system.io.pipelines/10.0.0/system.io.pipelines.10.0.0.nupkg.sha512",
     "/home/anton/.nuget/packages/system.text.encodings.web/10.0.0/system.text.encodings.web.10.0.0.nupkg.sha512",
-    "/home/anton/.nuget/packages/system.text.json/10.0.0/system.text.json.10.0.0.nupkg.sha512"
+    "/home/anton/.nuget/packages/system.text.json/10.0.0/system.text.json.10.0.0.nupkg.sha512",
+    "/home/anton/.nuget/packages/system.threading.ratelimiting/8.0.0/system.threading.ratelimiting.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

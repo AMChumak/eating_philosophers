@@ -1572,11 +1572,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab6/NetworkContracts/NetworkContracts.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab7/NetworkContracts/NetworkContracts.csproj",
       "projectName": "NetworkContracts",
-      "projectPath": "/home/anton/Documents/CS/lab6/NetworkContracts/NetworkContracts.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab7/NetworkContracts/NetworkContracts.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab6/NetworkContracts/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab7/NetworkContracts/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -1592,8 +1592,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj"
+            "/home/anton/Documents/CS/lab7/PhilosopherLib/PhilosopherLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/PhilosopherLib/PhilosopherLib.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PxmhxnvXC40=",
+  "dgSpecHash": "0uUygGXBxOU=",
   "success": true,
-  "projectFilePath": "/home/anton/Documents/CS/lab6/NetworkContracts/NetworkContracts.csproj",
+  "projectFilePath": "/home/anton/Documents/CS/lab7/NetworkContracts/NetworkContracts.csproj",
   "expectedPackageFiles": [
     "/home/anton/.nuget/packages/microsoft.extensions.configuration/9.0.10/microsoft.extensions.configuration.9.0.10.nupkg.sha512",
     "/home/anton/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.10/microsoft.extensions.configuration.abstractions.9.0.10.nupkg.sha512",

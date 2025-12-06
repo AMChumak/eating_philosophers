@@ -11,7 +11,7 @@ public class NetTableManager : ITableManager
     private readonly Dictionary<string, int> _philosopherSeats;
     private readonly object _seatLock = new object();
     private int _nextSeatIndex = 0;
-03
+
     public NetTableManager(IOptions<SimulationSettings> settings)
     {
         _settings = settings;

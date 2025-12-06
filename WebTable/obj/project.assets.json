@@ -1988,11 +1988,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab6/WebTable/WebTable.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab7/WebTable/WebTable.csproj",
       "projectName": "WebTable",
-      "projectPath": "/home/anton/Documents/CS/lab6/WebTable/WebTable.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab7/WebTable/WebTable.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab6/WebTable/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab7/WebTable/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -2008,20 +2008,20 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj"
+            "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/NetworkContracts/NetworkContracts.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/NetworkContracts/NetworkContracts.csproj"
+            "/home/anton/Documents/CS/lab7/NetworkContracts/NetworkContracts.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/NetworkContracts/NetworkContracts.csproj"
             },
-            "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj"
+            "/home/anton/Documents/CS/lab7/PhilosopherLib/PhilosopherLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/PhilosopherLib/PhilosopherLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj"
+            "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/StatisticsLib/StatisticsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/StatisticsLib/StatisticsLib.csproj"
+            "/home/anton/Documents/CS/lab7/StatisticsLib/StatisticsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/StatisticsLib/StatisticsLib.csproj"
             }
           }
         }

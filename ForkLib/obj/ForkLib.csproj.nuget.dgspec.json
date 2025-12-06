@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj": {}
+    "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj": {}
   },
   "projects": {
-    "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj": {
+    "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj",
         "projectName": "ForkLib",
-        "projectPath": "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab6/ForkLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab7/ForkLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-                "projectPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj"
+              "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+                "projectPath": "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+    "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectUniqueName": "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj",
         "projectName": "SimulationSettingsLib",
-        "projectPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj",
+        "projectPath": "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj",
         "packagesPath": "/home/anton/.nuget/packages/",
-        "outputPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/obj/",
+        "outputPath": "/home/anton/Documents/CS/lab7/SimulationSettingsLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/anton/.nuget/NuGet/NuGet.Config"

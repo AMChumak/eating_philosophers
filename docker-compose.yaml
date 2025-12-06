@@ -1,4 +1,38 @@
 services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "${RABBITMQ_PORT:-5672}:5672"
+      - "${RABBITMQ_MANAGEMENT_PORT:-15672}:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASS:-guest}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 5s
+      timeout: 10s
+      retries: 10
+      start_period: 10s
+    networks:
+      - philosophers-net
+
+  coordinator:
+    build:
+      context: .
+      dockerfile: WebCoordinator/Dockerfile
+    container_name: coordinator
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=${RABBITMQ_PORT:-5672}
+      - RABBITMQ_USER=${RABBITMQ_USER:-guest}
+      - RABBITMQ_PASS=${RABBITMQ_PASS:-guest}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - philosophers-net
+
   table-service:
     build:
       context: .
@@ -19,8 +53,14 @@ services:
     environment:
       - PHILOSOPHER_NAME=Платон
       - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=${RABBITMQ_PORT:-5672}
+      - RABBITMQ_USER=${RABBITMQ_USER:-guest}
+      - RABBITMQ_PASS=${RABBITMQ_PASS:-guest}
     depends_on:
       - table-service
+      - rabbitmq
+      - coordinator
     networks:
       - philosophers-net
 
@@ -32,8 +72,14 @@ services:
     environment:
       - PHILOSOPHER_NAME=Аристотель
       - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=${RABBITMQ_PORT:-5672}
+      - RABBITMQ_USER=${RABBITMQ_USER:-guest}
+      - RABBITMQ_PASS=${RABBITMQ_PASS:-guest}
     depends_on:
       - table-service
+      - rabbitmq
+      - coordinator
     networks:
       - philosophers-net
 
@@ -45,8 +91,14 @@ services:
     environment:
       - PHILOSOPHER_NAME=Сократ
       - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=${RABBITMQ_PORT:-5672}
+      - RABBITMQ_USER=${RABBITMQ_USER:-guest}
+      - RABBITMQ_PASS=${RABBITMQ_PASS:-guest}
     depends_on:
       - table-service
+      - rabbitmq
+      - coordinator
     networks:
       - philosophers-net
 
@@ -58,8 +110,14 @@ services:
     environment:
       - PHILOSOPHER_NAME=Декарт
       - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=${RABBITMQ_PORT:-5672}
+      - RABBITMQ_USER=${RABBITMQ_USER:-guest}
+      - RABBITMQ_PASS=${RABBITMQ_PASS:-guest}
     depends_on:
       - table-service
+      - rabbitmq
+      - coordinator
     networks:
       - philosophers-net
 
@@ -71,8 +129,14 @@ services:
     environment:
       - PHILOSOPHER_NAME=Кант
       - TABLE_SERVICE_URL=http://table-service:${TABLE_SERVICE_PORT:-5050}
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=${RABBITMQ_PORT:-5672}
+      - RABBITMQ_USER=${RABBITMQ_USER:-guest}
+      - RABBITMQ_PASS=${RABBITMQ_PASS:-guest}
     depends_on:
       - table-service
+      - rabbitmq
+      - coordinator
     networks:
       - philosophers-net
 

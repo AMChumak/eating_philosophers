@@ -32,10 +32,15 @@ void philosopherUpdateHandler(IPhilosopher philosopher, PhilosopherState newStat
         var response = httpClient.PostAsJsonAsync($"{tableServiceUrl}/philosopher/update", request).Result;
 
         done = response.IsSuccessStatusCode;
+        if (!done)
+        {
+            var r = new Random();
+            Task.Delay(r.Next(200,400));
+        }
     }
 }
 
-(int,int) initPhilosopher(string name)
+(int, int) initPhilosopher(string name)
 {
     int leftIdx = 0;
     int rightIdx = 0;
@@ -80,6 +85,8 @@ await Host.CreateDefaultBuilder(args)
 
         services.AddSingleton<ITakingForksStrategy,SourceHierarchyTakingForksStrategy>();
         services.AddSingleton<ITableManager, TableManager>();
+        services.AddSingleton<IPublisher, RabbitMQPublisher>();
+        services.AddSingleton<EventService>();
 
         services.AddHostedService(provider =>
         {
@@ -88,8 +95,11 @@ await Host.CreateDefaultBuilder(args)
             string name = Environment.GetEnvironmentVariable("PHILOSOPHER_NAME") ?? "Unknown";
             (leftId, rightId) = initPhilosopher(name);
 
-            var leftFork = new NetFork(leftId, httpClient, tableServiceUrl);
-            var rightFork = new NetFork(rightId, httpClient, tableServiceUrl);
+            var eventService = provider.GetService<EventService>();
+            eventService!.Seat = leftId;
+
+            var leftFork = new NetFork(leftId, httpClient, tableServiceUrl, eventService);
+            var rightFork = new NetFork(rightId, httpClient, tableServiceUrl, eventService);
 
             var logger = provider.GetService<ILogger<PhilosopherService>>();
             var settings = provider.GetService<IOptions<SimulationSettings>>();

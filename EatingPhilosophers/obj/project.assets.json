@@ -1139,6 +1139,23 @@
           }
         }
       },
+      "RabbitMQ.Client/7.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Pipelines": "8.0.0",
+          "System.Threading.RateLimiting": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.CodeDom/6.0.0": {
         "type": "package",
         "compile": {
@@ -1307,15 +1324,15 @@
           }
         }
       },
-      "System.IO.Pipelines/7.0.0": {
+      "System.IO.Pipelines/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.IO.Pipelines.dll": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
@@ -1390,6 +1407,22 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "System.Threading.RateLimiting/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "ForkLib/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -1404,6 +1437,19 @@
         },
         "runtime": {
           "bin/placeholder/ForkLib.dll": {}
+        }
+      },
+      "NetworkContracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "PhilosopherLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NetworkContracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetworkContracts.dll": {}
         }
       },
       "PhilosopherLib/1.0.0": {
@@ -1502,6 +1548,31 @@
         },
         "runtime": {
           "bin/placeholder/StrategyImplementationLib.dll": {}
+        }
+      },
+      "WebPhilosopher/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ForkLib": "1.0.0",
+          "Microsoft.Extensions.Configuration.Json": "10.0.0",
+          "Microsoft.Extensions.DependencyInjection": "10.0.0",
+          "Microsoft.Extensions.Logging": "10.0.0",
+          "Microsoft.Extensions.Logging.Console": "10.0.0",
+          "Microsoft.Extensions.Logging.Debug": "10.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "10.0.0",
+          "NetworkContracts": "1.0.0",
+          "PhilosopherLib": "1.0.0",
+          "RabbitMQ.Client": "7.2.0",
+          "SimulationSettingsLib": "1.0.0",
+          "StrategyContractLib": "1.0.0",
+          "StrategyImplementationLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WebPhilosopher.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebPhilosopher.dll": {}
         }
       }
     }
@@ -3579,6 +3650,23 @@
         "postgresql.png"
       ]
     },
+    "RabbitMQ.Client/7.2.0": {
+      "sha512": "PPQ7cF7lwbhqC4up6en1bTUZlz06YqQwJecOJzsguTtyhNA7oL5uNDZIx/h6ZfcyPZV4V3DYKSCxfm4RUFLcbA==",
+      "type": "package",
+      "path": "rabbitmq.client/7.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0/RabbitMQ.Client.dll",
+        "lib/net8.0/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.7.2.0.nupkg.sha512",
+        "rabbitmq.client.nuspec"
+      ]
+    },
     "System.CodeDom/6.0.0": {
       "sha512": "CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
       "type": "package",
@@ -3821,10 +3909,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.IO.Pipelines/7.0.0": {
-      "sha512": "jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
+    "System.IO.Pipelines/8.0.0": {
+      "sha512": "FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
       "type": "package",
-      "path": "system.io.pipelines/7.0.0",
+      "path": "system.io.pipelines/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3841,9 +3929,11 @@
         "lib/net6.0/System.IO.Pipelines.xml",
         "lib/net7.0/System.IO.Pipelines.dll",
         "lib/net7.0/System.IO.Pipelines.xml",
+        "lib/net8.0/System.IO.Pipelines.dll",
+        "lib/net8.0/System.IO.Pipelines.xml",
         "lib/netstandard2.0/System.IO.Pipelines.dll",
         "lib/netstandard2.0/System.IO.Pipelines.xml",
-        "system.io.pipelines.7.0.0.nupkg.sha512",
+        "system.io.pipelines.8.0.0.nupkg.sha512",
         "system.io.pipelines.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4001,10 +4091,44 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.RateLimiting/8.0.0": {
+      "sha512": "7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "type": "package",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Threading.RateLimiting.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Threading.RateLimiting.targets",
+        "lib/net462/System.Threading.RateLimiting.dll",
+        "lib/net462/System.Threading.RateLimiting.xml",
+        "lib/net6.0/System.Threading.RateLimiting.dll",
+        "lib/net6.0/System.Threading.RateLimiting.xml",
+        "lib/net7.0/System.Threading.RateLimiting.dll",
+        "lib/net7.0/System.Threading.RateLimiting.xml",
+        "lib/net8.0/System.Threading.RateLimiting.dll",
+        "lib/net8.0/System.Threading.RateLimiting.xml",
+        "lib/netstandard2.0/System.Threading.RateLimiting.dll",
+        "lib/netstandard2.0/System.Threading.RateLimiting.xml",
+        "system.threading.ratelimiting.8.0.0.nupkg.sha512",
+        "system.threading.ratelimiting.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "ForkLib/1.0.0": {
       "type": "project",
       "path": "../ForkLib/ForkLib.csproj",
       "msbuildProject": "../ForkLib/ForkLib.csproj"
+    },
+    "NetworkContracts/1.0.0": {
+      "type": "project",
+      "path": "../NetworkContracts/NetworkContracts.csproj",
+      "msbuildProject": "../NetworkContracts/NetworkContracts.csproj"
     },
     "PhilosopherLib/1.0.0": {
       "type": "project",
@@ -4035,6 +4159,11 @@
       "type": "project",
       "path": "../StrategyImplementationLib/StrategyImplementationLib.csproj",
       "msbuildProject": "../StrategyImplementationLib/StrategyImplementationLib.csproj"
+    },
+    "WebPhilosopher/1.0.0": {
+      "type": "project",
+      "path": "../WebPhilosopher/WebPhilosopher.csproj",
+      "msbuildProject": "../WebPhilosopher/WebPhilosopher.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4054,7 +4183,8 @@
       "SimulationSettingsLib >= 1.0.0",
       "StatisticsLib >= 1.0.0",
       "StrategyContractLib >= 1.0.0",
-      "StrategyImplementationLib >= 1.0.0"
+      "StrategyImplementationLib >= 1.0.0",
+      "WebPhilosopher >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4063,11 +4193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anton/Documents/CS/lab6/EatingPhilosophers/EatingPhilosophers.csproj",
+      "projectUniqueName": "/home/anton/Documents/CS/lab7/EatingPhilosophers/EatingPhilosophers.csproj",
       "projectName": "EatingPhilosophers",
-      "projectPath": "/home/anton/Documents/CS/lab6/EatingPhilosophers/EatingPhilosophers.csproj",
+      "projectPath": "/home/anton/Documents/CS/lab7/EatingPhilosophers/EatingPhilosophers.csproj",
       "packagesPath": "/home/anton/.nuget/packages/",
-      "outputPath": "/home/anton/Documents/CS/lab6/EatingPhilosophers/obj/",
+      "outputPath": "/home/anton/Documents/CS/lab7/EatingPhilosophers/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/anton/.nuget/NuGet/NuGet.Config"
@@ -4083,26 +4213,29 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/ForkLib/ForkLib.csproj"
+            "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/ForkLib/ForkLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/PhilosopherLib/PhilosopherLib.csproj"
+            "/home/anton/Documents/CS/lab7/PhilosopherLib/PhilosopherLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/PhilosopherLib/PhilosopherLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/SimulationContextLib/SimulationContextLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/SimulationContextLib/SimulationContextLib.csproj"
+            "/home/anton/Documents/CS/lab7/SimulationContextLib/SimulationContextLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/SimulationContextLib/SimulationContextLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/SimulationSettingsLib/SimulationSettingsLib.csproj"
+            "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/SimulationSettingsLib/SimulationSettingsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/StatisticsLib/StatisticsLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/StatisticsLib/StatisticsLib.csproj"
+            "/home/anton/Documents/CS/lab7/StatisticsLib/StatisticsLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/StatisticsLib/StatisticsLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/StrategyContractLib/StrategyContractLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/StrategyContractLib/StrategyContractLib.csproj"
+            "/home/anton/Documents/CS/lab7/StrategyContractLib/StrategyContractLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/StrategyContractLib/StrategyContractLib.csproj"
             },
-            "/home/anton/Documents/CS/lab6/StrategyImplementationLib/StrategyImplementationLib.csproj": {
-              "projectPath": "/home/anton/Documents/CS/lab6/StrategyImplementationLib/StrategyImplementationLib.csproj"
+            "/home/anton/Documents/CS/lab7/StrategyImplementationLib/StrategyImplementationLib.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/StrategyImplementationLib/StrategyImplementationLib.csproj"
+            },
+            "/home/anton/Documents/CS/lab7/WebPhilosopher/WebPhilosopher.csproj": {
+              "projectPath": "/home/anton/Documents/CS/lab7/WebPhilosopher/WebPhilosopher.csproj"
             }
           }
         }
@@ -4183,5 +4316,61 @@
         "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.Configuration.Json from 10.0.0 to 9.0.10. Reference the package directly from the project to select a different version. \n EatingPhilosophers -> WebPhilosopher -> Microsoft.Extensions.Configuration.Json (>= 10.0.0) \n EatingPhilosophers -> Microsoft.Extensions.Configuration.Json (>= 9.0.10)",
+      "libraryId": "Microsoft.Extensions.Configuration.Json",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.DependencyInjection from 10.0.0 to 9.0.10. Reference the package directly from the project to select a different version. \n EatingPhilosophers -> WebPhilosopher -> Microsoft.Extensions.DependencyInjection (>= 10.0.0) \n EatingPhilosophers -> Microsoft.Extensions.DependencyInjection (>= 9.0.10)",
+      "libraryId": "Microsoft.Extensions.DependencyInjection",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.Logging from 10.0.0 to 9.0.10. Reference the package directly from the project to select a different version. \n EatingPhilosophers -> WebPhilosopher -> Microsoft.Extensions.Logging (>= 10.0.0) \n EatingPhilosophers -> Microsoft.Extensions.Logging (>= 9.0.10)",
+      "libraryId": "Microsoft.Extensions.Logging",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.Logging.Console from 10.0.0 to 9.0.10. Reference the package directly from the project to select a different version. \n EatingPhilosophers -> WebPhilosopher -> Microsoft.Extensions.Logging.Console (>= 10.0.0) \n EatingPhilosophers -> Microsoft.Extensions.Logging.Console (>= 9.0.10)",
+      "libraryId": "Microsoft.Extensions.Logging.Console",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.Logging.Debug from 10.0.0 to 9.0.10. Reference the package directly from the project to select a different version. \n EatingPhilosophers -> WebPhilosopher -> Microsoft.Extensions.Logging.Debug (>= 10.0.0) \n EatingPhilosophers -> Microsoft.Extensions.Logging.Debug (>= 9.0.10)",
+      "libraryId": "Microsoft.Extensions.Logging.Debug",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.Options.ConfigurationExtensions from 10.0.0 to 9.0.10. Reference the package directly from the project to select a different version. \n EatingPhilosophers -> WebPhilosopher -> Microsoft.Extensions.Options.ConfigurationExtensions (>= 10.0.0) \n EatingPhilosophers -> Microsoft.Extensions.Options.ConfigurationExtensions (>= 9.0.10)",
+      "libraryId": "Microsoft.Extensions.Options.ConfigurationExtensions",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }
